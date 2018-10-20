@@ -1,1 +1,3 @@
 * VPC
+* SNS / SQS
+* IAM

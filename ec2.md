@@ -9,7 +9,7 @@ can be used to mask failure by remapping to another instance in your AWS account
 * you can make public  
 * AMIs are *regional*  
 * after you create the AMI you have to register it before you can launch it using the RegisterImage API  
-* DescribeImages API describes one or more images 
+* DescribeImages API describes one or more images
 
 
 #### Amazon Instance Store-Backed
@@ -28,6 +28,6 @@ can be used to mask failure by remapping to another instance in your AWS account
   * other volumes persist when instance terminated
 
 #### SSH
-`chmod 0400 LAFile.pem`
-`ssh -i LAfile.pem ec2-user@52.2.222.22`
+`chmod 0400 LAFile.pem`  
+`ssh -i LAfile.pem ec2-user@52.2.222.22`    
 *permissions of 0777 allow anyone to read/write*  
