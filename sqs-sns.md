@@ -6,6 +6,9 @@ message published to SNS topic
 message distributed to a number of SQS queues in parallel
 this allows you to take advantage of "parallel, asynchronous processing"  
 
+Topic Name - 256 character lymit (hyphens and underscores allowed)
+
+subscriptions need to be confirmed before 3 days, then the tokens for confirmation will expire
 
 #### SNS Message
 * Type
@@ -45,3 +48,15 @@ SNS sends notification messages to app and device
 * anonymous access is possible via IAM policies
 * 1 million free requests per month
 * message will be visible for a maximum of 12 hours
+
+
+
+#### SNS endpoint
+us east: http://sns.us-east-1.amazonaws.com
+us west (north california): http://sns.us-west-1.amazonaws.com  
+us west (oregon): http://sns.us-west-2.amazonaws.com  
+
+other options:
+eu - europe
+ap - asia pacific
+sa - south america
