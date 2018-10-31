@@ -1,3 +1,5 @@
+# VPC - virtual private cloud 
+
 VPC can have an internal load balancer or an Internet-facing load balancer  
 Internet-facing load balancers go in a *public* subnet  
 

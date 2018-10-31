@@ -1,3 +1,8 @@
+# Cloud Formation  
+**use this service to automatically provision resources**  
+
+***
+
 Fn::GetAtt - returns the value of an attribute from a resource in the template
 
 AWSTemplateFormatVersion - optional, identifies capabilities of AWSTemplateFormatVersion
@@ -41,4 +46,4 @@ Ref Intrinsic Function
 #### Amazon OpsWork
 * configuration management service  
 * uses Chef  
-  * server configuration as code 
+  * server configuration as code

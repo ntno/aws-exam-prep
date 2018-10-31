@@ -1,2 +1,2 @@
-# Elastic Block Store
+# EBS - Elastic Block Store
 encryption at rest can be enabled at creation time

@@ -1,3 +1,5 @@
+# Elastic Beanstalk
+
 combines various AWS features/services including  
 * EC2
 * RDS - relational database service

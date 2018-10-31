@@ -1,3 +1,5 @@
+# DynamoDB
+
 #### tables
 * 256 tables per region per account
   * can be requested to be increased
