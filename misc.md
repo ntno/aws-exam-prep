@@ -1,4 +1,4 @@
-AWS SDKs
+## AWS SDKs
 
 Java  
 .NET  
@@ -9,3 +9,11 @@ Ruby
 Go  
 C++  
 AWS Mobile SDK  
+
+
+## Rules
+permission is required for all penetration testing
+you must be logged into the AWS portal
+
+## Concepts
+availability zone vs region

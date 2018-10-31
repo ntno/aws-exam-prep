@@ -8,6 +8,7 @@ can be used to mask failure by remapping to another instance in your AWS account
 * you can share with a specific AWS account by account ID  
 * you can make public  
 * AMIs are *regional*  
+  * to make it available in a different region you would use CopyImage action 
 * after you create the AMI you have to register it before you can launch it using the RegisterImage API  
 * DescribeImages API describes one or more images
 

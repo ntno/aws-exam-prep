@@ -5,19 +5,26 @@ once component receives message, it will become invisible for 30 seconds (defaul
 
 setting VisibilityTimeout to 0 would make the message immediately visible
 
+max time a message can live in sqs queue - 14 days  
+min time - 1 min (assuming not deleted?)  
+default time - 4 days  
+
+10 million subscriptions per topic    
+100,000 topics per account  
+higher limits by request  
 
 ##### Fanout pattern
 message published to SNS topic  
 message distributed to a number of SQS queues in parallel
 this allows you to take advantage of "parallel, asynchronous processing"  
 
-Topic Name - 256 character lymit (hyphens and underscores allowed)
+Topic Name - 256 character limit (hyphens and underscores allowed)
 
 subscriptions need to be confirmed before 3 days, then the tokens for confirmation will expire
 
 #### SNS Message
 * Type
-* MessageId
+* MessageId - universally unique for each notification published
 * TopicArn
 * Subject
 * Message*
@@ -34,10 +41,31 @@ subscriptions need to be confirmed before 3 days, then the tokens for confirmati
     * Type
     * Value
 
+#### SNS API for Owner
+* CreateTopic
+* DeleteTopic
+* ListTopics (show all owned by a user by AWS ID)
+* ListSubscriptionsByTopic
+* SetTopicAttributes
+* GetTopicAttributes
+* AddPermission
+* RemovePermission
+
+
+#### protocols
+* https (http over ssl)
+* tls (transport layer security)
+  * versions 1.0, 1.1, 1.2
+
+#### integration with mobile
 to push a notification to a mobile app you first have to register the app (platform, name, credentials) with Amazon  
 then you create an endpoint for the app and mobile device
 SNS sends notification messages to app and device
 
+call the CreatePlatformEndPoint API to register multiple tokens
+
+GCM - google cloud messsaging (??)
+APNS - apple push notification service (??)
 
 
 #### SQS Polling
@@ -49,12 +77,15 @@ SNS sends notification messages to app and device
 
 #### SQS standard queue
 * loose-FIFO but exact order is not guaranteed
+  * tight-FIFO available in some regions
 * message is delivered *at-least* once
 * anonymous access is possible via IAM policies
 * 1 million free requests per month
 * message will be visible for a maximum of 12 hours
 
-
+#### dead letter queue
+* receive message from other source queues
+* receives messages that other queues can't process after some max # tries  
 
 #### SNS endpoint
 us east: http://sns.us-east-1.amazonaws.com
