@@ -2,7 +2,7 @@
 
 'Workflow starter' - first task
 'Decider'- polls workers for status and makes decisions
-'Activity Worker' - does work
+'Activity Worker' - does the work
 
 
 benefits:

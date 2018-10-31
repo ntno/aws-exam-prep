@@ -1,5 +1,6 @@
-SQS - simple queue service
-SNS - simple notification service
+# SQS and SNS
+## SQS - simple queue service
+## SNS - simple notification service
 
 once component receives message, it will become invisible for 30 seconds (default VisibilityTimeout).  after that time it becomes visible again to other components unless it is deleted using DeleteMessage
 
@@ -7,7 +8,10 @@ setting VisibilityTimeout to 0 would make the message immediately visible
 
 max time a message can live in sqs queue - 14 days  
 min time - 1 min (assuming not deleted?)  
-default time - 4 days  
+default time - 4 days    
+*not sure why 14 days, is it 14 days or 12 hours?*
+
+
 
 10 million subscriptions per topic    
 100,000 topics per account  
@@ -72,6 +76,7 @@ APNS - apple push notification service (??)
 ##### long polling
 * does not return a response until a message arrives or the poll times out
 * can be used to reduce cost because you reduce the number of empty receives
+
 ##### short polling
 * returns immediately
 
@@ -88,11 +93,11 @@ APNS - apple push notification service (??)
 * receives messages that other queues can't process after some max # tries  
 
 #### SNS endpoint
-us east: http://sns.us-east-1.amazonaws.com
-us west (north california): http://sns.us-west-1.amazonaws.com  
-us west (oregon): http://sns.us-west-2.amazonaws.com  
+us east: http://sns.us-east-1.amazonaws.com  
+us west (north california): http://sns.us-west-1.amazonaws.com    
+us west (oregon): http://sns.us-west-2.amazonaws.com   
 
-other options:
-eu - europe
-ap - asia pacific
-sa - south america
+other options:  
+eu - europe  
+ap - asia pacific  
+sa - south america  

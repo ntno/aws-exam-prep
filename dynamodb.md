@@ -20,19 +20,20 @@ available for:
 **Optimistic locking**
 strategy to ensure that the client-side item you are updating/deleting is the same as the item in DynamoDB
 
+***
+
 hash --- partition  
 range --- sort
 
 #### Write Throughput
-WCU - write capacity unit
-1 write per second  
-for a 1 kb item
+**WCU - write capacity unit**  
+1 write per second for a 1 kb item
 
 * divide item size by 1kb, then round up to the nearest 1kb
 * multiply by # items per second
 
 #### Read Throughput
-RCU - read capacity unit
+**RCU - read capacity unit**  
 1 strongly consistent read per second  
 2 eventually consistent reads per second  
 for a 4 kb items  
@@ -41,11 +42,13 @@ for a 4 kb items
 * multiply by # items per second
 * if eventually consistent, divide by two
 
-**you can reserve a minimum of 100 capacity units**
+*you can reserve a minimum of 100 capacity units*
 
-#### ProvisionedThroughputExceededException
+#### ProvisionedThroughputExceededException (??)
 can occur for a table or for one/more global secondary indexes  
 GSI - the hash/partition is mandatory and the sort/range is optional  
+
+***
 
 #### query vs scan
 * both support eventual consistent reads
@@ -58,14 +61,13 @@ GSI - the hash/partition is mandatory and the sort/range is optional
 5 global secondary indexes allowed
 - can be added at OR after table creation
 - can be deleted
+
 5 local secondary indexes are allowed
 - must be created at table creation time
 - cannot be deleted
 - support strong and eventual consistent reads
-(10 total secondary indexes)
+- same partition key as base table (?)  
+- different sort key from base table (?)  
+
+(10 total secondary indexes)  
 *no increases in index limit*
-
-
-#### local secondary index
-- same partition key as base table  
-- different sort key from base table  
