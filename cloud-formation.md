@@ -36,3 +36,9 @@ Ref Intrinsic Function
 
 
   Resources - mandatory field in template
+
+
+#### Amazon OpsWork
+* configuration management service  
+* uses Chef  
+  * server configuration as code 

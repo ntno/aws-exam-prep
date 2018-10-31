@@ -1,6 +1,11 @@
 SQS - simple queue service
 SNS - simple notification service
 
+once component receives message, it will become invisible for 30 seconds (default VisibilityTimeout).  after that time it becomes visible again to other components unless it is deleted using DeleteMessage
+
+setting VisibilityTimeout to 0 would make the message immediately visible
+
+
 ##### Fanout pattern
 message published to SNS topic  
 message distributed to a number of SQS queues in parallel

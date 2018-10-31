@@ -48,3 +48,8 @@ for a 4 kb items
 - support strong and eventual consistent reads
 (10 total secondary indexes)
 *no increases in index limit*
+
+
+#### local secondary index
+- same partition key as base table  
+- different sort key from base table  

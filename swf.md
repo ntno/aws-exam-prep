@@ -1,6 +1,7 @@
 ### SWF
-
-coordination between workers by 'decider' program
+'Workflow starter' - first task
+'Decider'- polls workers for status and makes decisions
+'Activity Worker' - does work
 
 
 benefits:

@@ -31,3 +31,30 @@ can be used to mask failure by remapping to another instance in your AWS account
 `chmod 0400 LAFile.pem`  
 `ssh -i LAfile.pem ec2-user@52.2.222.22`    
 *permissions of 0777 allow anyone to read/write*  
+
+SSH uses port 22
+Windows RDP uses port 3389
+
+
+#### instance metadata
+instance knows its own metadata
+* ami-id
+* ami-launch-index
+* ami-manifest-path
+* block-device-mapping/
+* hostname
+* instance-action
+* instance-id
+* instance-type
+* kernel-id
+* local-hostname
+* local-ipv4
+* mac
+* network/
+* placement/
+* public-hostname
+* public-ipv4
+* public-keys/
+* reservation-id
+* security-groups
+* services/
