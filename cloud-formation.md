@@ -1,6 +1,9 @@
 # Cloud Formation  
 **use this service to automatically provision resources**  
 
+max 200 stacks  
+more can be requested by contacting AWS  
+
 ***
 
 Fn::GetAtt - returns the value of an attribute from a resource in the template
@@ -29,6 +32,8 @@ python scripts
 - cfn-signal
 - cfn-get-metadata
 - cfn-hup
+
+you can also install packages, files, services in a bootstrap scripts
 
 Ref Intrinsic Function
 - use to assign values to properties which are not available until runtime

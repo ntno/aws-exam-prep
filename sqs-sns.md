@@ -2,6 +2,8 @@
 ## SQS - simple queue service
 ## SNS - simple notification service
 
+sns guarantees message delivery to sqs (but there can be duplicates)
+
 once component receives message, it will become invisible for 30 seconds (default VisibilityTimeout).  after that time it becomes visible again to other components unless it is deleted using DeleteMessage
 
 setting VisibilityTimeout to 0 would make the message immediately visible
@@ -22,9 +24,9 @@ message published to SNS topic
 message distributed to a number of SQS queues in parallel
 this allows you to take advantage of "parallel, asynchronous processing"  
 
-Topic Name - 256 character limit (hyphens and underscores allowed)
+Topic Name - 256 character limit (hyphens and underscores allowed), must be unique within account
 
-subscriptions need to be confirmed before 3 days, then the tokens for confirmation will expire
+subscriptions need to be confirmed before **3 days**, then the tokens for confirmation will expire
 
 #### SNS Message
 * Type
@@ -93,11 +95,11 @@ APNS - apple push notification service (??)
 * receives messages that other queues can't process after some max # tries  
 
 #### SNS endpoint
-us east: http://sns.us-east-1.amazonaws.com  
+us east (north virginia): http://sns.us-east-1.amazonaws.com  
 us west (north california): http://sns.us-west-1.amazonaws.com    
 us west (oregon): http://sns.us-west-2.amazonaws.com   
 
 other options:  
-eu - europe  
-ap - asia pacific  
-sa - south america  
+eu - europe [west, central,]  
+ap - asia pacific [southeast, northeast,]  
+sa - south america [east, ]  
