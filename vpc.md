@@ -44,7 +44,7 @@ rules are evaluated in numerical order
 *allow ephemeral ports for outbound traffic only*
 
 ### subnet
-* subnet spans 1 availability zone
+* subnet == 1 availability zone
 * you can put subnets in different availability zones
 
 #### IP range
@@ -63,7 +63,7 @@ CIDR
 * allow access to certain ports
 * allow different protocols (HTTP/HTTPS/SSH)
 
-
+***
 
 VPC can have an internal load balancer or an Internet-facing load balancer  
 Internet-facing load balancers go in a *public* subnet  
@@ -78,8 +78,9 @@ DNS host name
 requests to host name are sent to a pool of EC2 instances  
 Route 53 handles DNS on the backend
 
-#### NAT (Network Address Translation)
+### NAT (Network Address Translation)
 **Instance**
+*provide internet traffic to ec2 instance in private subnet*
 - ec2 instance  
 - use NAT AMI
 - put in your public subnet  
@@ -103,8 +104,18 @@ Route 53 handles DNS on the backend
 - more secure than instance  
 
 **Bastion server**  
-use to ssh/rdp into private instance  
-helps keep keys secure
+*used to securely administer ec2 instance in private subnet*
+- bastion server in public network  
+- log into bastion (locked ssh port to a particular IP)
+- then ssh over into instance in private subnet
+
+
+### VPC endpoint
+*internal gateway*
+allows you to securely connect to AWS services without going through public internet (NAT Gateway)
+**interface**  
+**gateway**  
+highly available
 
 #### elastic IP
 * elastic IP - public static IPv4 address
