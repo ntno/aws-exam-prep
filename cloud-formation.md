@@ -1,12 +1,18 @@
 # Cloud Formation  
 **use this service to automatically provision resources**  
+infrastructure as code  
 
 max 200 stacks  
 more can be requested by contacting AWS  
+service is free
+charged for resources
+charged for errors
 
 ***
 
-Fn::GetAtt - returns the value of an attribute from a resource in the template
+Fn::GetAtt  
+- returns the value of an attribute from a resource in the template
+- typically used to generate outputs in the template 
 
 AWSTemplateFormatVersion - optional, identifies capabilities of AWSTemplateFormatVersion
 
@@ -46,6 +52,10 @@ Ref Intrinsic Function
 
 
   Resources - mandatory field in template
+
+
+CREATE_COMPLETE
+CREATE_IN_PROGRESS
 
 
 #### Amazon OpsWork
