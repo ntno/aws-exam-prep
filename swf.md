@@ -27,3 +27,10 @@ SWF manipulation
 - AWS Flow Framework  
 - web service APIs  
 - console
+
+#### example use cases
+* media/video processing
+* business process automation
+* data analytics  
+* migration to cloud
+* batch processing

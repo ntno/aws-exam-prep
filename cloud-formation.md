@@ -9,10 +9,18 @@ charged for resources
 charged for errors
 
 ***
+Fn::FindInMap  
+- returns value corresponding to key in two-level map (from Mappings section)
+
+Fn::Join  
+
+Fn::Select  
+- returns object from an array by index  
+- index starts at 0!
 
 Fn::GetAtt  
 - returns the value of an attribute from a resource in the template
-- typically used to generate outputs in the template 
+- typically used to generate outputs in the template
 
 AWSTemplateFormatVersion - optional, identifies capabilities of AWSTemplateFormatVersion
 

@@ -1,4 +1,5 @@
 # DynamoDB
+*non relational database*
 
 #### tables
 
@@ -14,6 +15,7 @@ https://dzone.com/articles/indexing-in-dynamodb
 * maximum item size 400 kb
 * there are initial limits to throughput which can requested to be increased
   * US East (N. Virginia) has a bit higher than other regions
+* items are stored across 10 GB partitions
 
 **atomic counter**
 * increment / decrement the value of an existing attribute without conflicting with other requests
@@ -85,7 +87,13 @@ for a 4 kb items
 
 *you can reserve a minimum of 100 capacity units*
 
-#### ProvisionedThroughputExceededException (??)
+#### ProvisionedThroughputExceededException
+if you exceed 3000 RCU or 1000 WCU for a particular partition, you may get throttled
+causes:
+hot key (one key is more frequently accessed)   
+data not evenly distributed amongst partitions  
+request rate > provisioned
+
 can occur for a table or for one/more global secondary indexes  
 GSI - the hash/partition is mandatory and the sort/range is optional  
 
@@ -100,7 +108,8 @@ GSI - the hash/partition is mandatory and the sort/range is optional
   * or you could have scans done on a replica/shadow which doesn't take heavy traffic
 * query uses primary key of the table or a secondary index... ??
 * you can use a KeyConditionExpression to only look in a particular partition  
-
+* Scan can only retrieve 1 MB per call
+  * use LastEvaluatedKey to pick up where you left off
 ***
 
 BatchGetItem   
@@ -118,3 +127,5 @@ CreateTable
 UpdateTable  
 UpdateItem  
 ListTables  
+BatchWriteItem
+BatchGetItem

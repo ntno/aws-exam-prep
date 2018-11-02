@@ -13,22 +13,33 @@ public IP
   * to make it available in a different region you would use CopyImage action
 * after you create the AMI you have to register it before you can launch it using the RegisterImage API  
 * DescribeImages API describes one or more images
+* RunInstances to start, returns DNS names
+* DescribeInstances - status on running ec2 instances
+* TerminateInstances
+* StopInstances - release compute resources but preserve data on the EBS boot partition
+* StartInstances - restart instance associated with ^ EBS boot partition  
 
+***
+
+root device data can go on an Amazon EBS or a local instance store   
+EBS - data will persist independent from the lifetime of the instance  
+Instance - data only stored for lifetime of the instance  
 
 #### Amazon Instance Store-Backed
 * boot time usually less than 5 min  
 * max size 10 GB
 * data persists during life of the Instance  
   * instance can be rebooted
-  * instance can NOT be stopped
-  * instance can NOT be terminated
+  * data will NOT be persisted if stopped
+  * data will NOT be persisted if terminated
 
 #### Amazon EBS-Backed
 * boot time usually less than 1 min  
 * max size 16 TB
 * default:
-  * root volume deleted when instance terminated
+  * root volume deleted when instance terminated (by default)
   * other volumes persist when instance terminated
+* instance type / kernel / RAM etc for instance can be changed while instance is stopped without affecting data in the EBS-backend
 
 #### SSH
 `chmod 0400 LAFile.pem`  

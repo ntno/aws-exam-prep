@@ -12,7 +12,10 @@
 ### Virtual Private Gateway
 
 ### Route Table
-which subnets are allowed to communicate to another subnet
+contains routes  
+routes controls network traffic in/out of the subnet  
+each subnet MUST have a route table  
+route table can be used by multiple subnets  
 
 ### Network ACL  
 * executed before security groups
@@ -123,3 +126,7 @@ highly available
 * public IPv4 address can be reached by the Internet
 * per region
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
+
+***
+**AWS Direct Connect**  
+allows dedicated private connection from remote network to VPC

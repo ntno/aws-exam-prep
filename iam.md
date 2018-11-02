@@ -1,5 +1,14 @@
 # IAM - Identity Access Management
 
+## Policy Evaluation  
+
+1) assume deny (default deny)
+2) evaluate all policies  
+3) was there an explicit deny?  if yes, then BLOCK  
+4) was there an explicit allow?  if yes, then ALLOW
+5) fall through to default BLOCK 
+
+
 #### accessing AWS from computer
 
 1) create user  

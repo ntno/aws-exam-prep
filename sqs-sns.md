@@ -2,7 +2,12 @@
 ## SQS - simple queue service
 ## SNS - simple notification service
 
-sns guarantees message delivery to sqs (but there can be duplicates)
+*sns guarantees message delivery to sqs (but there can be duplicates)*
+
+* 10 million subscriptions per topic    
+* 100,000 topics per account  
+  * higher limits by request  
+* NO limit to # of queues
 
 once component receives message, it will become invisible for 30 seconds (default VisibilityTimeout).  after that time it becomes visible again to other components unless it is deleted using DeleteMessage
 
@@ -13,11 +18,6 @@ min time - 1 min (assuming not deleted?)
 default time - 4 days    
 *not sure why 14 days, is it 14 days or 12 hours?*
 
-
-
-10 million subscriptions per topic    
-100,000 topics per account  
-higher limits by request  
 
 ##### Fanout pattern
 message published to SNS topic  
@@ -31,7 +31,7 @@ subscriptions need to be confirmed before **3 days**, then the tokens for confir
 #### SNS Message
 * Type
 * MessageId - universally unique for each notification published
-* TopicArn
+* TopicArn - ex: arn:aws:sns:us-west-2:12345692345:MyTopic
 * Subject
 * Message*
   * cannot be null/empty
@@ -78,6 +78,8 @@ APNS - apple push notification service (??)
 ##### long polling
 * does not return a response until a message arrives or the poll times out
 * can be used to reduce cost because you reduce the number of empty receives
+* set ReceiveMessageWaitTimeSeconds to 20 seconds  
+
 
 ##### short polling
 * returns immediately
@@ -89,6 +91,8 @@ APNS - apple push notification service (??)
 * anonymous access is possible via IAM policies
 * 1 million free requests per month
 * message will be visible for a maximum of 12 hours
+* you can specify what size messages are allowed in the queue (1kb - 256 kb) - SetQueueAttributes
+
 
 #### dead letter queue
 * receive message from other source queues

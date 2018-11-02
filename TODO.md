@@ -15,4 +15,15 @@ key pairs
 types  
 
 
-# availability vs region
+read the FAQs  
+* S3
+* DynamoDB
+  * choosing the right partition key
+  * https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/
+* EC2
+* VPC
+* IAM
+* CloudFormation
+* ElasticBeanstalk
+
+read the white paper on security
