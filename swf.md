@@ -5,9 +5,11 @@
 'Activity Worker' - does the work
 
 100 domains
-10,000 workflow/activity types
-workflow history up to 25,000 events
-maximum workflow time - 1 year
+1,000 open activities at a time per workflow  
+10,000 workflow/activity types  
+workflow history up to 25,000 events  
+maximum workflow time - 1 year  
+managed across 3 AZs   
 
 benefits:
 - centralize coordination of steps

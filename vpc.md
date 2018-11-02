@@ -49,8 +49,11 @@ rules are evaluated in numerical order
 ### subnet
 * subnet == 1 availability zone
 * you can put subnets in different availability zones
+* 200 per VPC by default
 
 #### IP range
+first 4 addresses are reserved for amazon's use  
+
 10.0.0.0 - high address range
 172.16.0.0 - medium
 192.168.0.0 - small address range
@@ -130,3 +133,7 @@ highly available
 ***
 **AWS Direct Connect**  
 allows dedicated private connection from remote network to VPC
+
+***
+ELB  
+default 300 second before closing connection to de-registering instance / unhealthy instance

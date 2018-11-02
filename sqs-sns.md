@@ -35,6 +35,7 @@ subscriptions need to be confirmed before **3 days**, then the tokens for confir
 * Subject
 * Message*
   * cannot be null/empty
+  * JSON - can be used to specify different format per protocol
 * Timestamp
 * SignatureVersion
 * Signature
@@ -46,6 +47,8 @@ subscriptions need to be confirmed before **3 days**, then the tokens for confir
     * Name
     * Type
     * Value
+
+
 
 #### SNS API for Owner
 * CreateTopic

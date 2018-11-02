@@ -7,6 +7,9 @@ more can be requested by contacting AWS
 service is free
 charged for resources
 charged for errors
+60 params max  
+60 outputs max  
+
 
 ***
 Fn::FindInMap  
@@ -50,7 +53,9 @@ python scripts
 you can also install packages, files, services in a bootstrap scripts
 
 Ref Intrinsic Function
+
 - use to assign values to properties which are not available until runtime
+- if you input the logical ID of ec2:eip then the public ip is returned
 - can be used in:
   - resource properties
   - outputs
@@ -58,8 +63,7 @@ Ref Intrinsic Function
   - update policy attributes
   - resources
 
-
-  Resources - mandatory field in template
+Resources - mandatory field in template
 
 
 CREATE_COMPLETE

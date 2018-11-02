@@ -6,7 +6,18 @@
 2) evaluate all policies  
 3) was there an explicit deny?  if yes, then BLOCK  
 4) was there an explicit allow?  if yes, then ALLOW
-5) fall through to default BLOCK 
+5) fall through to default BLOCK
+
+## concepts
+**user**  
+represents person/service who uses the IAM user to interact with AWS   
+
+**group**  
+collection of IAM users  
+
+**role**  
+identity with permission policies - can be assumed by application (?)
+
 
 
 #### accessing AWS from computer
